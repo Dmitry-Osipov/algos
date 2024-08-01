@@ -7,8 +7,12 @@ public class SecondaryMinElementSearch {
     }
 
     public static int secondaryMin(int[] array) {
-        var min = Integer.MAX_VALUE;
-        var secondary = Integer.MAX_VALUE;
+        if (array == null || array.length < 2) {
+            throw new IllegalArgumentException("Array is null or empty");
+        }
+
+        var min = array[0];
+        var secondary = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
                 secondary = min;
@@ -16,10 +20,6 @@ public class SecondaryMinElementSearch {
             } else if (array[i] < secondary && array[i] != min) {
                 secondary = array[i];
             }
-        }
-
-        if (secondary == Integer.MAX_VALUE) {
-            return min;
         }
 
         return secondary;
