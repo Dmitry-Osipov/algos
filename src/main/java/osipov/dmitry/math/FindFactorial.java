@@ -25,9 +25,8 @@ public class FindFactorial {
 
     public static double factorialByStirling(int n) {
         var firstOperand = Math.sqrt(2 * n * Math.PI);
-        var secondOperand = Math.pow(n, n);
-        var thirdOperand = Math.pow(Math.E, -n);
-        return firstOperand * secondOperand * thirdOperand;
+        var secondOperand = Math.pow(n / Math.E, n);
+        return firstOperand * secondOperand;
     }
 
     public static long factorial(int n) {
